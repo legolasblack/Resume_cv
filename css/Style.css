@@ -16,15 +16,45 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-.navbar {
-    background: var(--color-titulos);
+/*---------------------------seccion de menu Navbar------------------------*/
+
+/* nav ul li a:hover{
+    color: var(--color-titulos) !important;
+} */
+
+.container-icons svg{
+    color: black;
+    margin-right: 15px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
 }
 
-/*seccion estilos del home*/
-#home {
-    background: url(../img/home1.jpg) top right;
-    width: 100%;
-    height: 200px;
-    background-size: cover;
+.container-icons svg:hover{
+    color:var(--color-adornos);
+}
 
+
+/*---------------------------seccion de menu Navbar------------------------*/
+
+/*seccion estilos del home*/
+.home {
+   background-image: url("../img/home2.jpg");
+   background-position: center;
+   background-size: cover;
+   background-attachment: fixed;
+   position: relative;
+   z-index: 2;
+
+}
+
+.home::after{
+   content:"";
+   width: 100%;
+   height: 100%;
+   position:absolute;
+   top:0;
+   left: 0;
+   background-color: rgba(5, 3, 22, 0.336);
+   z-index: -1;
 }
