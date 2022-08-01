@@ -7,6 +7,7 @@ font-family: 'Poppins', sans-serif;
     --color-adornos: #3467a7;
     --color-bk-adornos: #effbfa;
     --color-titulos: #004aad;
+    --titulos:#555555;
 
 }
 
@@ -14,6 +15,7 @@ font-family: 'Poppins', sans-serif;
 
 body {
     font-family: "Poppins", sans-serif;
+    color: var(--titulos);
 }
 
 /*---------------------------seccion de menu Navbar------------------------*/
@@ -31,7 +33,7 @@ body {
 }
 
 .container-icons svg:hover{
-    color:var(--color-adornos);
+    color:var(--titulos);
 }
 
 
@@ -58,3 +60,55 @@ body {
    background-color: rgba(5, 3, 22, 0.336);
    z-index: -1;
 }
+/*seccion estilos del home*/
+
+
+/*seccion About */
+
+.about .content h3 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #555555;
+  }
+  .about .content ul {
+    list-style: none;
+    padding: 0;
+  }
+  .about .content ul li {
+    padding-bottom: 10px;
+  }
+  .about .content ul i {
+    font-size: 20px;
+    padding-right: 2px;
+    color: #34b7a7;
+  }
+  .about .content p:last-child {
+    margin-bottom: 0;
+  }
+/*seccion About End*/
+
+
+/*seccion Generales */
+
+.section-title{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.section-title h1 {
+    margin-bottom: 40px;
+}
+.section-title h1::after{
+    content: "";
+    position: absolute; 
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--color-titulos);
+    align-items: center;
+    left: calc(50% - 50px);
+    margin-top: 10px;
+}
+
+
+/*seccion Generales end */
