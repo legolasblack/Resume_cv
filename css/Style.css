@@ -87,11 +87,57 @@ body {
   }
 /*seccion About End*/
 
+/*seccion resume */
+
+.resume-item{
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid var(--color-adornos);
+  position: relative;
+}
+
+.resume-item h4{
+  color: var(--color-titulos);
+}
+
+.resume ul li{
+  padding-top: 10px;
+}
+
+.resume-item h6{
+  background-color: var(--color-adornos);
+  /* text-align: center; */
+  display: inline-block;
+  padding:  2px 8px;
+  border-radius: 3px;
+  color: var(--color-bk-adornos);
+}
+
+.resume p{
+  margin:  8px 0px;
+}
+
+.resume-item::before{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  left: -9px;
+  top: 0;
+  background-color: var(--color-adornos);
+  border: 2px solid var(--color-titulos);
+  
+}
+/*seccion resume end */
+
 
 /*seccion Generales */
+section{
+    padding-top: 70px;
+}
 
 .section-title{
-    padding-top: 30px;
     padding-bottom: 30px;
     text-align: center;
 }
