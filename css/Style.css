@@ -158,3 +158,40 @@ section{
 
 
 /*seccion Generales end */
+/*seccion Slider logos end */
+.slider {
+  width: 100%;
+  overflow: hidden; /* Oculta el contenido desbordante */
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(150px * 17); /* Ajusta según la cantidad de logos */
+  animation: scroll 30s linear infinite;
+  
+}
+
+.slide {
+  min-width: 150px; /* Ajusta según la cantidad de logos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.slide img {
+  width: 110px; /* Ajusta el tamaño de los logos */
+  height: auto;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/*seccion Slider logos end */
