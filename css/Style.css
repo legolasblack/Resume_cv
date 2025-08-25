@@ -195,3 +195,518 @@ section{
 }
 
 /*seccion Slider logos end */
+
+ /*seccion Portfolio */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(52, 103, 167, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-info {
+            text-align: center;
+            color: white;
+        }
+
+        .portfolio-info h4 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .portfolio-links a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .portfolio-links a:hover {
+            background: white;
+            color: var(--color-adornos);
+        }
+
+        /*seccion Portfolio end */
+
+        /*seccion Hobbies */
+        .hobby-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+            border-top: 4px solid var(--color-adornos);
+            height: 100%;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .hobby-icon {
+            font-size: 3rem;
+            color: var(--color-adornos);
+            margin-bottom: 20px;
+        }
+
+        .hobby-card h4 {
+            color: var(--color-titulos);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hobby-card p {
+            color: var(--titulos);
+            line-height: 1.6;
+        }
+
+        /*seccion Hobbies end */
+
+        /*seccion Footer */
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer ul li a:hover {
+            color: white;
+        }
+
+        .footer ul li i {
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 20px;
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /*seccion Footer end */
+
+        /* Skills Progress Bars Styles */
+.skills-progress {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.skills-category {
+    color: var(--color-titulos);
+    /*
+    font-weight: 600;
+    */
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.skills-category::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--color-adornos);
+}
+
+.skill-item {
+    margin-bottom: 25px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: var(--titulos);
+    font-size: 1rem;
+}
+
+.skill-percentage {
+    font-weight: 600;
+    color: var(--color-adornos);
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-adornos) 0%, var(--color-titulos) 100%);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.1) 0%, 
+        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0.1) 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-category {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .skill-item {
+        margin-bottom: 20px;
+    }
+    
+    .skill-name {
+        font-size: 0.9rem;
+    }
+    
+    .skill-percentage {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation trigger class */
+.animate-progress .progress-fill {
+    animation: fillProgress 2s ease-in-out forwards;
+}
+
+@keyframes fillProgress {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--target-width);
+    }
+}
+
+/* Achievements Section Styles */
+.achievements {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.achievement-category {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-adornos);
+}
+
+.category-header i {
+    font-size: 2rem;
+    color: var(--color-adornos);
+    margin-right: 15px;
+}
+
+.category-header h3 {
+    color: var(--color-titulos);
+    margin: 0;
+    font-weight: 600;
+}
+
+.achievement-item {
+    display: flex;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.hackathon-icon {
+    background: linear-gradient(135deg, var(--color-adornos), var(--color-titulos));
+    color: white;
+}
+
+.expo-icon {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.achievement-icon i {
+    font-size: 1.5rem;
+}
+
+.achievement-content h4 {
+    color: var(--color-titulos);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.achievement-location {
+    color: var(--color-adornos);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.achievement-description {
+    color: var(--titulos);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.achievement-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background: var(--color-adornos);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Achievement Stats */
+.achievement-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--color-adornos), var(--color-titulos));
+    border-radius: 15px;
+    color: white;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Timeline Styles */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-adornos), var(--color-titulos));
+    transform: translateY(-50%);
+}
+
+.timeline-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 200px;
+}
+
+.timeline-year {
+    background: var(--color-adornos);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.timeline-content h5 {
+    color: var(--color-titulos);
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.timeline-content p {
+    color: var(--titulos);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .achievement-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .achievement-icon {
+        margin: 0 auto 15px;
+    }
+    
+    .achievement-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .timeline {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .timeline::before {
+        display: none;
+    }
+    
+    .timeline-item {
+        max-width: 100%;
+    }
+}
