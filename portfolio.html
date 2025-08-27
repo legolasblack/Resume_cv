@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Rediseñado</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #3467a7;
+            --color-secondary: #667eea;
+            --color-accent: #764ba2;
+            --color-text: #333;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 40px 0;
+        }
+
+        .portfolio {
+            background: transparent;
+            padding: 80px 0;
+        }
+
+        .section-title h1 {
+            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            color: var(--color-text);
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            margin-bottom: 40px;
+            background: white;
+            height: 300px;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .portfolio-carousel {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .portfolio-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .portfolio-content {
+            padding: 20px;
+            text-align: center;
+            background: white;
+            border-radius: 0 0 20px 20px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(52, 103, 167, 0.95), rgba(118, 75, 162, 0.95));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+            border-radius: 20px;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-info {
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .portfolio-info h4 {
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .portfolio-info p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .portfolio-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .portfolio-links a {
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .portfolio-links a:hover {
+            background: white;
+            color: var(--color-primary);
+            transform: scale(1.1);
+        }
+
+        .project-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        /* Backgrounds específicos para cada proyecto */
+        .bg-dashboard-1 {
+            background-image: url("./img/logos/Bootstrap_logo.png");
+            background-size: cover;
+            /* Esto es opcional pero recomendado */
+            background-position: center;
+            /* Centra la imagen */
+            background-repeat: no-repeat;
+            /* Evita que se repita */
+        }
+
+        .bg-dashboard-2 {
+            background: linear-gradient(135deg, #5f72bd 0%, #9b59b6 100%);
+        }
+
+        .bg-dashboard-3 {
+            background: linear-gradient(45deg, #4834d4 0%, #be2edd 100%);
+        }
+
+        .bg-dashboard-4 {
+            background: linear-gradient(135deg, #3742fa 0%, #a55eea 100%);
+        }
+
+        .bg-mobile-1 {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .bg-mobile-2 {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8a56 100%);
+        }
+
+        .bg-mobile-3 {
+            background: linear-gradient(45deg, #fd79a8 0%, #fdcb6e 100%);
+        }
+
+        .bg-mobile-4 {
+            background: linear-gradient(135deg, #e17055 0%, #f39c12 100%);
+        }
+
+        .bg-iot-1 {
+            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .bg-iot-2 {
+            background: linear-gradient(135deg, #00cec9 0%, #55a3ff 100%);
+        }
+
+        .bg-iot-3 {
+            background: linear-gradient(45deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        .bg-iot-4 {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+        }
+
+        .bg-db-1 {
+            background: linear-gradient(45deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .bg-db-2 {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+        }
+
+        .bg-db-3 {
+            background: linear-gradient(45deg, #81ecec 0%, #a29bfe 100%);
+        }
+
+        .bg-db-4 {
+            background: linear-gradient(135deg, #55efc4 0%, #fd79a8 100%);
+        }
+
+        .bg-api-1 {
+            background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .bg-api-2 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .bg-api-3 {
+            background: linear-gradient(45deg, #ff8a80 0%, #ea80fc 100%);
+        }
+
+        .bg-api-4 {
+            background: linear-gradient(135deg, #ffd54f 0%, #ff8a65 100%);
+        }
+
+        .bg-alexa-1 {
+            background: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        .bg-alexa-2 {
+            background: linear-gradient(135deg, #c471ed 0%, #f64f59 100%);
+        }
+
+        .bg-alexa-3 {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-alexa-4 {
+            background: linear-gradient(135deg, #9c88ff 0%, #ff9a9e 100%);
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-item {
+                height: 280px;
+            }
+
+            .portfolio-carousel {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="portfolio" id="Portfolio">
+        <div class="container">
+            <div class="row section-title">
+                <div class="col-12">
+                    <h1 class="display-4 text-center">Portfolio</h1>
+                    <p class="text-center">Here are some of my recent projects and work samples</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Dashboard Logistic -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <div class="portfolio-carousel">
+                            <div class="portfolio-slide active bg-dashboard-1">
+                                Dashboard Overview
+                            </div>
+                            <div class="portfolio-slide bg-dashboard-2">
+                                Analytics View
+                            </div>
+                            <div class="portfolio-slide bg-dashboard-3">
+                                Data Visualization
+                            </div>
+                            <div class="portfolio-slide bg-dashboard-4">
+                                User Interface
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="indicator active" data-slide="0"></div>
+                                <div class="indicator" data-slide="1"></div>
+                                <div class="indicator" data-slide="2"></div>
+                                <div class="indicator" data-slide="3"></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <p class="project-title">Dashboard Logistic</p>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Dashboard Logistic</h4>
+                                <p>Full-stack web application built with Laravel and React</p>
+                                <div class="portfolio-links">
+                                    <a href="#"><i class="bi bi-eye"></i></a>
+                                    <a href="#"><i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task Manager App -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <div class="portfolio-carousel">
+                            <div class="portfolio-slide active bg-mobile-1">
+                                Mobile App UI
+                            </div>
+                            <div class="portfolio-slide bg-mobile-2">
+                                Task Management
+                            </div>
+                            <div class="portfolio-slide bg-mobile-3">
+                                Calendar View
+                            </div>
+                            <div class="portfolio-slide bg-mobile-4">
+                                Settings Panel
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="indicator active" data-slide="0"></div>
+                                <div class="indicator" data-slide="1"></div>
+                                <div class="indicator" data-slide="2"></div>
+                                <div class="indicator" data-slide="3"></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <p class="project-title">Task Manager App</p>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Task Manager App</h4>
+                                <p>Mobile application for productivity and task management</p>
+                                <div class="portfolio-links">
+                                    <a href="#"><i class="bi bi-eye"></i></a>
+                                    <a href="#"><i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Home System -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <div class="portfolio-carousel">
+                            <div class="portfolio-slide active bg-iot-1">
+                                IoT Dashboard
+                            </div>
+                            <div class="portfolio-slide bg-iot-2">
+                                Device Control
+                            </div>
+                            <div class="portfolio-slide bg-iot-3">
+                                Monitoring System
+                            </div>
+                            <div class="portfolio-slide bg-iot-4">
+                                Automation Rules
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="indicator active" data-slide="0"></div>
+                                <div class="indicator" data-slide="1"></div>
+                                <div class="indicator" data-slide="2"></div>
+                                <div class="indicator" data-slide="3"></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <p class="project-title">Smart Home System</p>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Smart Home System</h4>
+                                <p>IoT solution for home automation and monitoring</p>
+                                <div class="portfolio-links">
+                                    <a href="#"><i class="bi bi-eye"></i></a>
+                                    <a href="#"><i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CRM Database -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <div class="portfolio-carousel">
+                            <div class="portfolio-slide active bg-db-1">
+                                Database Schema
+                            </div>
+                            <div class="portfolio-slide bg-db-2">
+                                CRM Interface
+                            </div>
+                            <div class="portfolio-slide bg-db-3">
+                                Data Reports
+                            </div>
+                            <div class="portfolio-slide bg-db-4">
+                                Admin Panel
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="indicator active" data-slide="0"></div>
+                                <div class="indicator" data-slide="1"></div>
+                                <div class="indicator" data-slide="2"></div>
+                                <div class="indicator" data-slide="3"></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <p class="project-title">CRM Database</p>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>CRM Database</h4>
+                                <p>Custom database design and management system</p>
+                                <div class="portfolio-links">
+                                    <a href="#"><i class="bi bi-eye"></i></a>
+                                    <a href="#"><i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RESTful API -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <div class="portfolio-carousel">
+                            <div class="portfolio-slide active bg-api-1">
+                                API Documentation
+                            </div>
+                            <div class="portfolio-slide bg-api-2">
+                                Microservices
+                            </div>
+                            <div class="portfolio-slide bg-api-3">
+                                Docker Setup
+                            </div>
+                            <div class="portfolio-slide bg-api-4">
+                                Testing Suite
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="indicator active" data-slide="0"></div>
+                                <div class="indicator" data-slide="1"></div>
+                                <div class="indicator" data-slide="2"></div>
+                                <div class="indicator" data-slide="3"></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <p class="project-title">RESTful API</p>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>RESTful API</h4>
+                                <p>Microservices architecture with Docker deployment</p>
+                                <div class="portfolio-links">
+                                    <a href="#"><i class="bi bi-eye"></i></a>
+                                    <a href="#"><i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Assistant -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="portfolio-item">
+                        <div class="portfolio-carousel">
+                            <div class="portfolio-slide active bg-alexa-1">
+                                Alexa Skill Interface
+                            </div>
+                            <div class="portfolio-slide bg-alexa-2">
+                                Voice Commands
+                            </div>
+                            <div class="portfolio-slide bg-alexa-3">
+                                Integration Setup
+                            </div>
+                            <div class="portfolio-slide bg-alexa-4">
+                                Hackathon Demo
+                            </div>
+                            <div class="carousel-indicators">
+                                <div class="indicator active" data-slide="0"></div>
+                                <div class="indicator" data-slide="1"></div>
+                                <div class="indicator" data-slide="2"></div>
+                                <div class="indicator" data-slide="3"></div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <p class="project-title">Voice Assistant</p>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Voice Assistant</h4>
+                                <p>Alexa Skill developed during Hackathon 2018</p>
+                                <div class="portfolio-links">
+                                    <a href="#"><i class="bi bi-eye"></i></a>
+                                    <a href="#"><i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Portfolio carousel functionality
+        class PortfolioCarousel {
+            constructor(item) {
+                this.item = item;
+                this.slides = item.querySelectorAll('.portfolio-slide');
+                this.indicators = item.querySelectorAll('.indicator');
+                this.currentSlide = 0;
+                this.isPlaying = false;
+                this.interval = null;
+
+                this.init();
+            }
+
+            init() {
+                // Add click listeners to indicators
+                this.indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        this.goToSlide(index);
+                    });
+                });
+
+                // Auto-play when hovering
+                this.item.addEventListener('mouseenter', () => {
+                    this.startAutoPlay();
+                });
+
+                this.item.addEventListener('mouseleave', () => {
+                    this.stopAutoPlay();
+                });
+            }
+
+            goToSlide(index) {
+                // Remove active class from current slide and indicator
+                this.slides[this.currentSlide].classList.remove('active');
+                this.indicators[this.currentSlide].classList.remove('active');
+
+                // Add active class to new slide and indicator
+                this.currentSlide = index;
+                this.slides[this.currentSlide].classList.add('active');
+                this.indicators[this.currentSlide].classList.add('active');
+            }
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                this.goToSlide(nextIndex);
+            }
+
+            startAutoPlay() {
+                if (this.isPlaying) return;
+                this.isPlaying = true;
+
+                this.interval = setInterval(() => {
+                    this.nextSlide();
+                }, 2000);
+            }
+
+            stopAutoPlay() {
+                this.isPlaying = false;
+                if (this.interval) {
+                    clearInterval(this.interval);
+                    this.interval = null;
+                }
+            }
+        }
+
+        // Initialize carousels for all portfolio items
+        document.addEventListener('DOMContentLoaded', () => {
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            portfolioItems.forEach(item => {
+                new PortfolioCarousel(item);
+            });
+        });
+    </script>
+</body>
+
+</html>

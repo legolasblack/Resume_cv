@@ -196,7 +196,7 @@ section{
 
 /*seccion Slider logos end */
 
- /*seccion Portfolio */
+ /* /*seccion Portfolio */
         .portfolio-item {
             position: relative;
             overflow: hidden;
@@ -271,7 +271,7 @@ section{
         }
 
         /*seccion Portfolio end */
-
+ */
         /*seccion Hobbies */
         .hobby-card {
             background: white;
