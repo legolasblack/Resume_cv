@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Rediseñado</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
-        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
         :root {
             --color-primary: #3467a7;
@@ -47,7 +45,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             transition: all 0.4s ease;
             margin-bottom: 40px;
             background: white;
@@ -56,7 +54,7 @@
 
         .portfolio-item:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
         }
 
         .portfolio-carousel {
@@ -81,7 +79,7 @@
             color: white;
             font-size: 1.3rem;
             font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .portfolio-slide.active {
@@ -102,7 +100,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255,255,255,0.5);
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -196,115 +194,131 @@
 
         /* Backgrounds específicos para cada proyecto */
         .bg-dashboard-1 {
-            background-image: url("./img/logos/Bootstrap_logo.png");
-            background-size: cover;
-            /* Esto es opcional pero recomendado */
+           /*  background-image: url("./img/dashboard/dashboard-1.png"); */
+            background-image: url("./img/dashboard1.png");
+            background-size: contain;
             background-position: center;
-            /* Centra la imagen */
             background-repeat: no-repeat;
-            /* Evita que se repita */
         }
-
         .bg-dashboard-2 {
-            background: linear-gradient(135deg, #5f72bd 0%, #9b59b6 100%);
+            background-image: url("./img/dashboard2.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-dashboard-3 {
-            background: linear-gradient(45deg, #4834d4 0%, #be2edd 100%);
+            background-image: url("./img/dashboard/dashboard-3.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .bg-mobile-1 {
-            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            background-image: url("./img/mobile/mobile-1.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-mobile-2 {
-            background: linear-gradient(135deg, #ff6b9d 0%, #ff8a56 100%);
+            background-image: url("./img/mobile/mobile-2.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-mobile-3 {
-            background: linear-gradient(45deg, #fd79a8 0%, #fdcb6e 100%);
-        }
-
-        .bg-mobile-4 {
-            background: linear-gradient(135deg, #e17055 0%, #f39c12 100%);
+            background-image: url("./img/mobile/mobile-3.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .bg-iot-1 {
-            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+            background-image: url("./img/iot/iot-1.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-iot-2 {
-            background: linear-gradient(135deg, #00cec9 0%, #55a3ff 100%);
+            background-image: url("./img/iot/iot-2.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-iot-3 {
-            background: linear-gradient(45deg, #74b9ff 0%, #0984e3 100%);
-        }
-
-        .bg-iot-4 {
-            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            background-image: url("./img/iot/iot-3.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .bg-db-1 {
-            background: linear-gradient(45deg, #a8edea 0%, #fed6e3 100%);
+            background-image: url("./img/database/database-1.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-db-2 {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            background-image: url("./img/database/database-2.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-db-3 {
-            background: linear-gradient(45deg, #81ecec 0%, #a29bfe 100%);
-        }
-
-        .bg-db-4 {
-            background: linear-gradient(135deg, #55efc4 0%, #fd79a8 100%);
+            background-image: url("./img/database/database-3.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .bg-api-1 {
-            background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%);
+            background-image: url("./img/api/api-1.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-api-2 {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            background-image: url("./img/api/api-2.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-api-3 {
-            background: linear-gradient(45deg, #ff8a80 0%, #ea80fc 100%);
-        }
-
-        .bg-api-4 {
-            background: linear-gradient(135deg, #ffd54f 0%, #ff8a65 100%);
+            background-image: url("./img/api/api-3.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .bg-alexa-1 {
-            background: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%);
+            background-image: url("./img/alexa/alexa-1.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-alexa-2 {
-            background: linear-gradient(135deg, #c471ed 0%, #f64f59 100%);
+            background-image: url("./img/alexa/alexa-2.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
         .bg-alexa-3 {
-            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .bg-alexa-4 {
-            background: linear-gradient(135deg, #9c88ff 0%, #ff9a9e 100%);
+            background-image: url("./img/alexa/alexa-3.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         @media (max-width: 768px) {
             .portfolio-item {
                 height: 280px;
             }
-
+            
             .portfolio-carousel {
                 height: 230px;
             }
         }
     </style>
 </head>
-
 <body>
     <section class="portfolio" id="Portfolio">
         <div class="container">
@@ -329,14 +343,10 @@
                             <div class="portfolio-slide bg-dashboard-3">
                                 Data Visualization
                             </div>
-                            <div class="portfolio-slide bg-dashboard-4">
-                                User Interface
-                            </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
                                 <div class="indicator" data-slide="1"></div>
                                 <div class="indicator" data-slide="2"></div>
-                                <div class="indicator" data-slide="3"></div>
                             </div>
                         </div>
                         <div class="portfolio-content">
@@ -368,14 +378,10 @@
                             <div class="portfolio-slide bg-mobile-3">
                                 Calendar View
                             </div>
-                            <div class="portfolio-slide bg-mobile-4">
-                                Settings Panel
-                            </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
                                 <div class="indicator" data-slide="1"></div>
                                 <div class="indicator" data-slide="2"></div>
-                                <div class="indicator" data-slide="3"></div>
                             </div>
                         </div>
                         <div class="portfolio-content">
@@ -407,14 +413,10 @@
                             <div class="portfolio-slide bg-iot-3">
                                 Monitoring System
                             </div>
-                            <div class="portfolio-slide bg-iot-4">
-                                Automation Rules
-                            </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
                                 <div class="indicator" data-slide="1"></div>
                                 <div class="indicator" data-slide="2"></div>
-                                <div class="indicator" data-slide="3"></div>
                             </div>
                         </div>
                         <div class="portfolio-content">
@@ -446,14 +448,10 @@
                             <div class="portfolio-slide bg-db-3">
                                 Data Reports
                             </div>
-                            <div class="portfolio-slide bg-db-4">
-                                Admin Panel
-                            </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
                                 <div class="indicator" data-slide="1"></div>
                                 <div class="indicator" data-slide="2"></div>
-                                <div class="indicator" data-slide="3"></div>
                             </div>
                         </div>
                         <div class="portfolio-content">
@@ -485,14 +483,10 @@
                             <div class="portfolio-slide bg-api-3">
                                 Docker Setup
                             </div>
-                            <div class="portfolio-slide bg-api-4">
-                                Testing Suite
-                            </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
                                 <div class="indicator" data-slide="1"></div>
                                 <div class="indicator" data-slide="2"></div>
-                                <div class="indicator" data-slide="3"></div>
                             </div>
                         </div>
                         <div class="portfolio-content">
@@ -524,14 +518,10 @@
                             <div class="portfolio-slide bg-alexa-3">
                                 Integration Setup
                             </div>
-                            <div class="portfolio-slide bg-alexa-4">
-                                Hackathon Demo
-                            </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
                                 <div class="indicator" data-slide="1"></div>
                                 <div class="indicator" data-slide="2"></div>
-                                <div class="indicator" data-slide="3"></div>
                             </div>
                         </div>
                         <div class="portfolio-content">
@@ -562,12 +552,11 @@
                 this.slides = item.querySelectorAll('.portfolio-slide');
                 this.indicators = item.querySelectorAll('.indicator');
                 this.currentSlide = 0;
-                this.isPlaying = false;
                 this.interval = null;
-
+                
                 this.init();
             }
-
+            
             init() {
                 // Add click listeners to indicators
                 this.indicators.forEach((indicator, index) => {
@@ -575,51 +564,34 @@
                         this.goToSlide(index);
                     });
                 });
-
-                // Auto-play when hovering
-                this.item.addEventListener('mouseenter', () => {
-                    this.startAutoPlay();
-                });
-
-                this.item.addEventListener('mouseleave', () => {
-                    this.stopAutoPlay();
-                });
+                
+                // Start auto-play immediately
+                this.startAutoPlay();
             }
-
+            
             goToSlide(index) {
                 // Remove active class from current slide and indicator
                 this.slides[this.currentSlide].classList.remove('active');
                 this.indicators[this.currentSlide].classList.remove('active');
-
+                
                 // Add active class to new slide and indicator
                 this.currentSlide = index;
                 this.slides[this.currentSlide].classList.add('active');
                 this.indicators[this.currentSlide].classList.add('active');
             }
-
+            
             nextSlide() {
                 const nextIndex = (this.currentSlide + 1) % this.slides.length;
                 this.goToSlide(nextIndex);
             }
-
+            
             startAutoPlay() {
-                if (this.isPlaying) return;
-                this.isPlaying = true;
-
                 this.interval = setInterval(() => {
                     this.nextSlide();
-                }, 2000);
-            }
-
-            stopAutoPlay() {
-                this.isPlaying = false;
-                if (this.interval) {
-                    clearInterval(this.interval);
-                    this.interval = null;
-                }
+                }, 3000); // Cambio de imagen cada 3 segundos
             }
         }
-
+        
         // Initialize carousels for all portfolio items
         document.addEventListener('DOMContentLoaded', () => {
             const portfolioItems = document.querySelectorAll('.portfolio-item');
@@ -629,5 +601,4 @@
         });
     </script>
 </body>
-
 </html>
