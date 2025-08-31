@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Rediseñado</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <style>
         :root {
             --color-primary: #3467a7;
@@ -45,7 +47,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
             transition: all 0.4s ease;
             margin-bottom: 40px;
             background: white;
@@ -54,7 +56,7 @@
 
         .portfolio-item:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
         }
 
         .portfolio-carousel {
@@ -74,22 +76,65 @@
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
             display: flex;
-            align-items: center;
+            align-items: end;
             justify-content: center;
             color: white;
             font-size: 1.3rem;
             font-weight: 600;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .portfolio-slide.active {
             opacity: 1;
         }
 
+        .text-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /*     .text-slide-container{
+            background: black;
+            opacity: .2;
+            color: white;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            margin-bottom: 10px;
+        } */
+        .text-slide-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            /*
+
+             */
+            /* Fondo blanco semitransparente */
+            /* border-radius: 16px;*/
+            /* Bordes redondeados */
+            backdrop-filter: blur(10px);
+            /* Desenfoque del fondo */
+            -webkit-backdrop-filter: blur(10px);
+            /* Soporte Safari */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* Borde semitransparente */
+            padding: 5px;
+            /* Espaciado interno */
+            display: inline-block;
+            /* Ajusta al contenido */
+            color: #fff;
+            /* Texto blanco para contraste */
+            font-weight: 500;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+        }
+
         .carousel-indicators {
             position: absolute;
-            bottom: 15px;
-            left: 50%;
+            bottom: 30px;
+            left: 60%;
             transform: translateX(-50%);
             display: flex;
             gap: 8px;
@@ -100,7 +145,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -162,6 +207,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
+            margin-bottom: 20px;
         }
 
         .portfolio-links a {
@@ -194,58 +240,64 @@
 
         /* Backgrounds específicos para cada proyecto */
         .bg-dashboard-1 {
-           /*  background-image: url("./img/dashboard/dashboard-1.png"); */
-            background-image: url("./img/dashboard1.png");
+            /*  background-image: url("./img/dashboard/dashboard-1.png"); */
+            background-image: url("./img/dash1.png");
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-dashboard-2 {
-            background-image: url("./img/dashboard2.png");
+            background-image: url("./img/dash2.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-dashboard-3 {
-            background-image: url("./img/dashboard/dashboard-3.png");
+            background-image: url("./img/dash1.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
         .bg-mobile-1 {
-            background-image: url("./img/mobile/mobile-1.png");
+            background-image: url("./img/inci1.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-mobile-2 {
-            background-image: url("./img/mobile/mobile-2.png");
+            background-image: url("./img/inci2.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-mobile-3 {
-            background-image: url("./img/mobile/mobile-3.png");
+            background-image: url("./img/inci1.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
         .bg-iot-1 {
-            background-image: url("./img/iot/iot-1.png");
+            background-image: url("./img/coop1.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-iot-2 {
-            background-image: url("./img/iot/iot-2.png");
+            background-image: url("./img/coop2.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-iot-3 {
-            background-image: url("./img/iot/iot-3.png");
+            background-image: url("./img/coop3.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -257,12 +309,14 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-db-2 {
             background-image: url("./img/database/database-2.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-db-3 {
             background-image: url("./img/database/database-3.png");
             background-size: cover;
@@ -276,12 +330,14 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-api-2 {
             background-image: url("./img/api/api-2.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-api-3 {
             background-image: url("./img/api/api-3.png");
             background-size: cover;
@@ -295,12 +351,14 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-alexa-2 {
             background-image: url("./img/alexa/alexa-2.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .bg-alexa-3 {
             background-image: url("./img/alexa/alexa-3.png");
             background-size: cover;
@@ -312,13 +370,14 @@
             .portfolio-item {
                 height: 280px;
             }
-            
+
             .portfolio-carousel {
                 height: 230px;
             }
         }
     </style>
 </head>
+
 <body>
     <section class="portfolio" id="Portfolio">
         <div class="container">
@@ -335,13 +394,20 @@
                     <div class="portfolio-item">
                         <div class="portfolio-carousel">
                             <div class="portfolio-slide active bg-dashboard-1">
-                                Dashboard Overview
+                                <div class="text-slide-container">
+                                    <span class="text-slide">Dashboard Overview</span>
+                                </div>
                             </div>
                             <div class="portfolio-slide bg-dashboard-2">
-                                Analytics View
+                                <div class="text-slide-container">
+                                    <span class="text-slide">Analytics View</span>
+                                </div>
                             </div>
                             <div class="portfolio-slide bg-dashboard-3">
-                                Data Visualization
+                                <div class="text-slide-container">
+                                    <span class="text-slide">Data Visualization</span>
+                                </div>
+
                             </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
@@ -354,12 +420,14 @@
                         </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
-                                <h4>Dashboard Logistic</h4>
-                                <p>Full-stack web application built with Laravel and React</p>
+                                <h4>Dashboard Logistic and Traffic</h4>
+                                <p>Full-stack web application built with React and Webdev(Lenguaje W)</p>
                                 <div class="portfolio-links">
-                                    <a href="#"><i class="bi bi-eye"></i></a>
-                                    <a href="#"><i class="bi bi-github"></i></a>
+                                    <!--             <a href="#"><i class="bi bi-eye"></i></a> -->
+                                    <a href="https://github.com/Diegojrpaq/Dashboard-trafico" target="_blank"><i
+                                            class="bi bi-github"></i></a>
                                 </div>
+                                <span>This repository is private and only available for interview purposes</span>
                             </div>
                         </div>
                     </div>
@@ -370,13 +438,25 @@
                     <div class="portfolio-item">
                         <div class="portfolio-carousel">
                             <div class="portfolio-slide active bg-mobile-1">
-                                Mobile App UI
+                                <div class="text-slide-container">
+                                    <div class="text-slide">
+                                        Incident Manager System
+                                    </div>
+                                </div>
                             </div>
                             <div class="portfolio-slide bg-mobile-2">
-                                Task Management
+                                <div class="text-slide-container">
+                                    <div class="text-slide">
+                                        Task Management
+                                    </div>
+                                </div>
                             </div>
                             <div class="portfolio-slide bg-mobile-3">
-                                Calendar View
+                                <div class="text-slide-container">
+                                    <div class="text-slide">
+                                        Chat for the Employees
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
@@ -385,16 +465,17 @@
                             </div>
                         </div>
                         <div class="portfolio-content">
-                            <p class="project-title">Task Manager App</p>
+                            <p class="project-title">Incident Manager App</p>
                         </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h4>Task Manager App</h4>
-                                <p>Mobile application for productivity and task management</p>
+                                 <p>Full-stack web application built with React and Webdev(Lenguaje W)</p>
                                 <div class="portfolio-links">
-                                    <a href="#"><i class="bi bi-eye"></i></a>
+                              <!--       <a href="#"><i class="bi bi-eye"></i></a> -->
                                     <a href="#"><i class="bi bi-github"></i></a>
                                 </div>
+                                <span>This repository is private and only available for interview purposes</span>
                             </div>
                         </div>
                     </div>
@@ -405,13 +486,25 @@
                     <div class="portfolio-item">
                         <div class="portfolio-carousel">
                             <div class="portfolio-slide active bg-iot-1">
-                                IoT Dashboard
+                                <div class="text-slide-container">
+                                    <div class="text-slide">
+                                        Coppel Reference
+                                    </div>
+                                </div>
                             </div>
                             <div class="portfolio-slide bg-iot-2">
-                                Device Control
+                                <div class="text-slide-container">
+                                    <div class="text-slide">
+                                        Device Control
+                                    </div>
+                                </div>
                             </div>
                             <div class="portfolio-slide bg-iot-3">
-                                Monitoring System
+                                <div class="text-slide-container">
+                                    <div class="text-slide">
+                                        Monitoring System
+                                    </div>
+                                </div>
                             </div>
                             <div class="carousel-indicators">
                                 <div class="indicator active" data-slide="0"></div>
@@ -553,10 +646,10 @@
                 this.indicators = item.querySelectorAll('.indicator');
                 this.currentSlide = 0;
                 this.interval = null;
-                
+
                 this.init();
             }
-            
+
             init() {
                 // Add click listeners to indicators
                 this.indicators.forEach((indicator, index) => {
@@ -564,34 +657,34 @@
                         this.goToSlide(index);
                     });
                 });
-                
+
                 // Start auto-play immediately
                 this.startAutoPlay();
             }
-            
+
             goToSlide(index) {
                 // Remove active class from current slide and indicator
                 this.slides[this.currentSlide].classList.remove('active');
                 this.indicators[this.currentSlide].classList.remove('active');
-                
+
                 // Add active class to new slide and indicator
                 this.currentSlide = index;
                 this.slides[this.currentSlide].classList.add('active');
                 this.indicators[this.currentSlide].classList.add('active');
             }
-            
+
             nextSlide() {
                 const nextIndex = (this.currentSlide + 1) % this.slides.length;
                 this.goToSlide(nextIndex);
             }
-            
+
             startAutoPlay() {
                 this.interval = setInterval(() => {
                     this.nextSlide();
                 }, 3000); // Cambio de imagen cada 3 segundos
             }
         }
-        
+
         // Initialize carousels for all portfolio items
         document.addEventListener('DOMContentLoaded', () => {
             const portfolioItems = document.querySelectorAll('.portfolio-item');
@@ -601,4 +694,5 @@
         });
     </script>
 </body>
+
 </html>
